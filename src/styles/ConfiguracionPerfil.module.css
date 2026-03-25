@@ -1,0 +1,62 @@
+/* CONTENEDOR PRINCIPAL */
+.container {
+  min-height: calc(100vh - 64px);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin-top: 64px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-start),
+    var(--gradient-middle),
+    var(--gradient-end)
+  );
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  max-width: 400px;
+
+  background: white;
+  padding: 24px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* TITULO */
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+
+  color: var(--foreground);
+}
+
+/* BOTON */
+.saveBtn {
+  width: 100%;
+  padding: 10px;
+
+  background: #3b82f6;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  margin-top: 20px;
+
+  transition: 0.2s ease;
+}
+
+.saveBtn:hover {
+  background: #2563eb;
+}

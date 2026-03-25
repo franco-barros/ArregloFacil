@@ -1,0 +1,38 @@
+/* CONTENEDOR GENERAL */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* BLOQUE */
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.label {
+  margin-bottom: 4px;
+  color: var(--foreground);
+  font-size: 14px;
+}
+
+/* INPUT */
+.input {
+  width: 100%;
+  padding: 8px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  background: #f9fafb;
+  color: #111827;
+
+  outline: none;
+}
+
+/* INPUT FOCUS */
+.input:focus {
+  border-color: #3b82f6;
+}

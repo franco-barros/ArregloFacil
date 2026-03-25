@@ -1,0 +1,26 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filters button {
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+
+  font-size: 13px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.filters button:hover {
+  background: #eef2f7;
+}
+
+.filters button:active {
+  transform: scale(0.97);
+}

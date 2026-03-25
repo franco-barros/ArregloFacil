@@ -1,0 +1,94 @@
+/* CONTENEDOR GENERAL */
+.container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* TITULOS */
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--foreground);
+}
+
+/* BLOQUE DE FILAS */
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* COLUMNA */
+.column {
+  width: 50%;
+}
+
+/* LABEL */
+.label {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+/* BOTON DROPDOWN */
+.dropdownButton {
+  margin-top: 8px;
+  padding: 8px;
+  width: 100%;
+
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+/* PANEL DROPDOWN */
+.dropdown {
+  margin-top: 8px;
+  padding: 8px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  background: #f9fafb;
+}
+
+/* ITEM DEL DROPDOWN */
+.dayButton {
+  display: block;
+  width: 100%;
+  text-align: left;
+
+  padding: 4px;
+  border-radius: 6px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dayButton:hover {
+  background: #f3f4f6;
+}
+
+/* SELECTED */
+.selected {
+  background: #3b82f6;
+  color: white;
+}
+
+/* INPUT TIME */
+.input {
+  width: 100%;
+  padding: 8px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  background: #f9fafb;
+  color: #111827;
+}

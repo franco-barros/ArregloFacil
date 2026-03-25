@@ -1,0 +1,28 @@
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+
+  background: #f9fafb;
+
+  transition: all 0.2s ease;
+}
+
+.search:focus-within {
+  border-color: #3b82f6;
+  background: white;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  width: 100%;
+
+  background: transparent;
+  font-size: 14px;
+}

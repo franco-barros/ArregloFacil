@@ -1,0 +1,122 @@
+/* CONTENEDOR PRINCIPAL */
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 20px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-start),
+    var(--gradient-middle),
+    var(--gradient-end)
+  );
+}
+
+/* TEXTO */
+.loginText {
+  max-width: 320px;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.loginText h1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* CARD */
+.loginCard {
+  width: 100%;
+  max-width: 350px;
+  background: var(--login-card-bg);
+  padding: 24px;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUTS */
+.loginCard label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--login-label-color);
+}
+
+.loginCard input {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* CHECKBOX */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.checkboxContainer label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* LINKS */
+.loginLinks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.loginLinks a {
+  text-decoration: none;
+}
+
+.loginLinks a:hover {
+  text-decoration: underline;
+}
+
+/* ERROR */
+.error {
+  color: red;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* BOTONES */
+.btn {
+  height: 48px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
+
+.primary {
+  background: var(--secondary);
+  color: white;
+}
+
+.secondary {
+  background: gray;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
