@@ -35,7 +35,12 @@ const Navbar = () => {
   return (
     <motion.nav className={styles.navbar}>
       <div className={styles.container}>
-        <Image src="/logo.png" alt="Equilibra" width={100} height={100} />
+        <Image
+          src="/Logoconllaves.png"
+          alt="Equilibra"
+          width={100}
+          height={100}
+        />
 
         <ul className={styles.menuDesktop}>
           <li>

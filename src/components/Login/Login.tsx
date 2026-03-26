@@ -7,7 +7,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "../../styles/Login.module.css";
 
-const Login = () => {
+const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,12 +16,11 @@ const Login = () => {
 
   const handleLogin = () => {
     setError("");
-
     if (email === "test@test.com" && password === "1234") {
       localStorage.setItem("token", "fake-token");
       router.push("/dashboard");
     } else {
-      setError("Credenciales incorrectas");
+      setError("Email o contraseña incorrectos");
     }
   };
 
@@ -31,62 +30,108 @@ const Login = () => {
   };
 
   return (
-    <motion.div className={styles.loginContainer}>
-      <Image src="/logo.png" alt="Equilibra" width={200} height={200} />
-
-      <div className={styles.loginText}>
-        <h1>
-          Bienvenido a Equilibra, tu plataforma de bienestar y productividad
-        </h1>
-      </div>
-
-      <div className={styles.loginCard}>
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="Ingresar"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+    <motion.div
+      className={styles.loginContainer}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+    >
+      {/* LOGO */}
+      <motion.div
+        className={styles.logoWrapper}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.1 }}
+      >
+        <Image
+          src="/Logoconllaves.png"
+          alt="Arreglo Fácil"
+          width={140}
+          height={140}
         />
+      </motion.div>
 
-        <label>Password</label>
-        <input
-          type={showPassword ? "text" : "password"}
-          placeholder="Ingresar"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      {/* CONTENIDO PRINCIPAL */}
+      <motion.div
+        className={styles.mainContent}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+      >
+        {/* TEXTO */}
+        <motion.div
+          className={styles.loginText}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
+          <h1 className={styles.desktopOnly}>
+            Solucioná problemas de tu hogar de forma rápida y segura
+          </h1>
+          <p className={styles.desktopOnly}>
+            Conectamos clientes con profesionales de confianza 🔧
+          </p>
+        </motion.div>
 
-        <div className={styles.checkboxContainer}>
+        {/* FORMULARIO */}
+        <motion.div
+          className={styles.loginCard}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.4, delay: 0.25 }}
+        >
+          <label htmlFor="email">Email</label>
           <input
-            type="checkbox"
-            checked={showPassword}
-            onChange={() => setShowPassword(!showPassword)}
+            id="email"
+            type="email"
+            placeholder="ejemplo@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <label>Mostrar contraseña</label>
-        </div>
 
-        <div className={styles.loginLinks}>
-          <Link href="#">¿Olvidaste tu contraseña?</Link>
-          <Link href="#">Registrate</Link>
-        </div>
+          <label htmlFor="password">Contraseña</label>
+          <input
+            id="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="********"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        {error && <p className={styles.error}>{error}</p>}
+          <div className={styles.checkboxContainer}>
+            <input
+              id="showPassword"
+              type="checkbox"
+              checked={showPassword}
+              onChange={() => setShowPassword(!showPassword)}
+            />
+            <label htmlFor="showPassword">Mostrar contraseña</label>
+          </div>
 
-        <button
-          onClick={handleLogin}
-          className={`${styles.btn} ${styles.primary}`}
-        >
-          Iniciar Sesión
-        </button>
+          <div className={styles.loginLinks}>
+            <Link href="#">¿Olvidaste tu contraseña?</Link>
+            <Link href="#">Crear cuenta</Link>
+          </div>
 
-        <button
-          onClick={handleGuestLogin}
-          className={`${styles.btn} ${styles.secondary}`}
-        >
-          Entrar como Invitado
-        </button>
-      </div>
+          {error && <p className={styles.error}>{error}</p>}
+
+          <button
+            onClick={handleLogin}
+            className={`${styles.btn} ${styles.primary}`}
+          >
+            Iniciar sesión
+          </button>
+
+          <button
+            onClick={handleGuestLogin}
+            className={`${styles.btn} ${styles.secondary}`}
+          >
+            Explorar como invitado
+          </button>
+        </motion.div>
+      </motion.div>
     </motion.div>
   );
 };
